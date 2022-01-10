@@ -52,7 +52,7 @@ const Wrapper = tw.div`
     px-6  
 `;
 const BgCover = tw.div`
-  h-[160vh] w-full bg-gray-500 absolute top-0 left-0
+  h-[130vh] w-full bg-gray-500 absolute top-0 left-0
   opacity-30 lg:hidden block
 `;
 const LogoImg = tw.img`
