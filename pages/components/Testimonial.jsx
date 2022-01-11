@@ -4,6 +4,7 @@ import tw from "tailwind-styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Fade from "react-reveal/Fade";
 
 const Testimonial = () => {
   let settings = {
@@ -37,52 +38,54 @@ const Testimonial = () => {
   };
 
   return (
-    <Wrapper>
-      <h1>What they've said</h1>
-      <Carousel {...settings}>
-        <Wrap>
-          <ProfileImg src="avatar-anisha.png" />
-          <ProfileName>Anisha Li</ProfileName>
-          <p>
-            "Manage has supercharged our team's workflow. The ability to
-            maintain visibility on larger milestones at all times keeps everyone
-            motivated."
-          </p>
-        </Wrap>
-        <Wrap>
-          <ProfileImg src="avatar-ali.png" />
-          <ProfileName>Ali Bravo</ProfileName>
-          <p>
-            "We have been able to cancel so many other subscriptions since using
-            Manage. There is no more cross-channel confusion and everyone is
-            more focused."
-          </p>
-        </Wrap>
-        <Wrap>
-          <ProfileImg src="avatar-richard.png" />
-          <ProfileName>Richard Watts</ProfileName>
-          <p>
-            "Manage allows us to provide structure and process. It keeps us
-            organized and focused. I can't stop recommendig them to everyone I
-            talk to!"
-          </p>
-        </Wrap>
-        <Wrap>
-          <ProfileImg src="avatar-shanai.png" />
-          <ProfileName>Shanai Gough</ProfileName>
-          <p>
-            "Their software allows us to track, manage and collaborate on our
-            projects from anywhere. It keeps the whole team in sync without
-            being intrusive."
-          </p>
-        </Wrap>
-      </Carousel>
-      <GetStarted>Get Started</GetStarted>
-    </Wrapper>
+    <Fade>
+      <Wrapper>
+        <h1>What they've said</h1>
+        <Carousel {...settings}>
+          <Wrap>
+            <ProfileImg src="avatar-anisha.png" />
+            <ProfileName>Anisha Li</ProfileName>
+            <p>
+              "Manage has supercharged our team's workflow. The ability to
+              maintain visibility on larger milestones at all times keeps
+              everyone motivated."
+            </p>
+          </Wrap>
+          <Wrap>
+            <ProfileImg src="avatar-ali.png" />
+            <ProfileName>Ali Bravo</ProfileName>
+            <p>
+              "We have been able to cancel so many other subscriptions since
+              using Manage. There is no more cross-channel confusion and
+              everyone is more focused."
+            </p>
+          </Wrap>
+          <Wrap>
+            <ProfileImg src="avatar-richard.png" />
+            <ProfileName>Richard Watts</ProfileName>
+            <p>
+              "Manage allows us to provide structure and process. It keeps us
+              organized and focused. I can't stop recommendig them to everyone I
+              talk to!"
+            </p>
+          </Wrap>
+          <Wrap>
+            <ProfileImg src="avatar-shanai.png" />
+            <ProfileName>Shanai Gough</ProfileName>
+            <p>
+              "Their software allows us to track, manage and collaborate on our
+              projects from anywhere. It keeps the whole team in sync without
+              being intrusive."
+            </p>
+          </Wrap>
+        </Carousel>
+        <GetStarted>Get Started</GetStarted>
+      </Wrapper>
+    </Fade>
   );
 };
 const Wrapper = tw.div`
-    mb-[4rem] lg:mb-[8rem] lg:px-[10rem]
+    mb-[4rem] lg:mb-[8rem] xl:px-[10rem]
     h1 {
         text-center
     }
@@ -156,5 +159,11 @@ const GetStarted = styled.div`
   margin-right: auto;
   margin-left: auto;
   font-weight: 600;
+  transition: all 0.3s ease-in 2ms;
+
+  &:hover {
+    background: #fff;
+    color: hsl(12, 88%, 59%);
+  }
 `;
 export default Testimonial;

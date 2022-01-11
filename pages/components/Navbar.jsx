@@ -20,39 +20,39 @@ const Navbar = () => {
       {isOpened ? <BgCover></BgCover> : null}
       <LogoImg src="/logo.svg" alt="Logo Img" />
       <NavContainer>
-        <NavLink>Pricing</NavLink>
-        <NavLink>Product</NavLink>
-        <NavLink>About Us</NavLink>
-        <NavLink>Careers</NavLink>
-        <NavLink>Community</NavLink>
+        <NavLink href="#">Pricing</NavLink>
+        <NavLink href="#">Product</NavLink>
+        <NavLink href="#">About Us</NavLink>
+        <NavLink href="#">Careers</NavLink>
+        <NavLink href="#">Community</NavLink>
       </NavContainer>
       <GetStarted>Get Started</GetStarted>
       <NavToggler onClick={handleNav}>
         {isOpened ? (
-          <Close src="/icon-close.svg" />
+          <Close src="/icon-close.svg" alt="Nav Close" />
         ) : (
-          <Hamburger src="/icon-hamburger.svg" />
+          <Hamburger src="/icon-hamburger.svg" alt="Nav Open" />
         )}
       </NavToggler>
       {isOpened ? (
         <NavMenu>
-          <NavMobileLink>Pricing</NavMobileLink>
-          <NavMobileLink>Product</NavMobileLink>
-          <NavMobileLink>About Us</NavMobileLink>
-          <NavMobileLink>Careers</NavMobileLink>
-          <NavMobileLink>Community</NavMobileLink>
+          <NavMobileLink href="#">Pricing</NavMobileLink>
+          <NavMobileLink href="#">Product</NavMobileLink>
+          <NavMobileLink href="#">About Us</NavMobileLink>
+          <NavMobileLink href="#">Careers</NavMobileLink>
+          <NavMobileLink href="#">Community</NavMobileLink>
         </NavMenu>
       ) : null}
     </Wrapper>
   );
 };
 const Wrapper = tw.div`
-    flex justify-between py-10 lg:px-[10rem] 
+    flex justify-between py-10 lg:px-10 xl:px-[10rem] 
     items-start lg:items-center
     px-6  
 `;
 const BgCover = tw.div`
-  h-[100vh] w-full bg-gray-500 absolute top-0 left-0
+  h-full w-full bg-gray-500 absolute top-0 left-0
   opacity-30 lg:hidden block
 `;
 const LogoImg = tw.img`
@@ -62,7 +62,7 @@ const NavContainer = tw.div`
     hidden lg:block
 `;
 const NavLink = tw.a`
-    mx-4
+    mx-4 transition-all hover:text-bright-red
 `;
 const GetStarted = styled.div`
   display: flex;
@@ -75,8 +75,14 @@ const GetStarted = styled.div`
   padding: 0.75rem 1.75rem 0.75rem 1.75rem;
   box-shadow: 1px 6px 4px 0px rgb(242, 95, 58, 0.4);
   font-weight: 600;
+  transition: all 0.3s ease-in 2ms;
 
-  @media (max-width: 1028px) {
+  &:hover {
+    background: #fff;
+    color: hsl(12, 88%, 59%);
+  }
+
+  @media (max-width: 1023px) {
     display: none;
   }
 `;
@@ -93,5 +99,6 @@ const NavMenu = tw.div`
 `;
 const NavMobileLink = tw.a`
   flex items-center justify-center my-5
+  transition-all hover:text-bright-red
 `;
 export default Navbar;

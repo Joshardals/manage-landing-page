@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "tailwind-styled-components";
+import Zoom from "react-reveal/Zoom";
 
 const Simplify = () => {
   return (
     <Wrapper>
-      <Text>Simplify how your team works today.</Text>
-      <GetStarted>Get Started</GetStarted>
+      <Zoom>
+        <Text>Simplify how your team works today.</Text>
+        <GetStarted>Get Started</GetStarted>
+      </Zoom>
     </Wrapper>
   );
 };
@@ -19,10 +22,10 @@ const Wrapper = styled.div`
   justify-content: space-between;
   position: relative;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 768px) {
+    height: 20rem;
     flex-direction: column;
     justify-content: center;
-    height: 20rem;
   }
 
   &:before {
@@ -78,10 +81,16 @@ const GetStarted = styled.div`
   justify-content: center;
   background: #fff;
   border-radius: 999px;
-  color: hsl(12, 88%, 59%);
+  color: rgb(242, 95, 58);
   padding: 0.75rem 1.75rem 0.75rem 1.75rem;
-  box-shadow: 1px 6px 4px 0px rgb(242, 95, 58, 0.4);
+  box-shadow: 1px 6px 4px 0px rgb(255, 255, 255, 0.4);
   width: 10rem;
   font-weight: 600;
+  transition: all 0.3s ease-in 2ms;
+
+  &:hover {
+    color: #ffffff;
+    background: hsl(12, 88%, 59%);
+  }
 `;
 export default Simplify;

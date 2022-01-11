@@ -1,88 +1,92 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 import Simplify from "./Simplify";
-
+import styled from "styled-components";
+import Bounce from "react-reveal/Bounce";
+import Zoom from "react-reveal/Zoom";
 const Footer = () => {
   return (
     <Wrapper>
       <Simplify />
-      <FooterContainer>
-        <FirstContainer>
-          <LogoCont>
-            <LogoImg src="/logo.svg" alt="Logo Img" />
-            <SocialContainer>
-              <SocialLink>
-                <SocialImg src="icon-facebook.svg" />
-              </SocialLink>
-              <SocialLink>
-                <SocialImg src="icon-youtube.svg" />
-              </SocialLink>
-              <SocialLink>
-                <SocialImg src="icon-twitter.svg" />
-              </SocialLink>
-              <SocialLink>
-                <SocialImg src="icon-pinterest.svg" />
-              </SocialLink>
-              <SocialLink>
-                <SocialImg src="icon-instagram.svg" />
-              </SocialLink>
-            </SocialContainer>
-          </LogoCont>
-        </FirstContainer>
-        <SecondContainer>
-          <NavContainer>
-            <NavLink href="#">Home</NavLink>
-            <NavLink href="#">Pricing</NavLink>
-            <NavLink href="#">Products</NavLink>
-            <NavLink href="#">About Us</NavLink>
-          </NavContainer>
+      <Zoom>
+        <FooterContainer>
+          <FirstContainer>
+            <LogoCont>
+              <LogoImg src="/logo.svg" alt="Logo Img" />
+              <SocialContainer>
+                <SocialLink href="#">
+                  <SocialImg src="icon-facebook.svg" />
+                </SocialLink>
+                <SocialLink href="#">
+                  <SocialImg src="icon-youtube.svg" />
+                </SocialLink>
+                <SocialLink href="#">
+                  <SocialImg src="icon-twitter.svg" />
+                </SocialLink>
+                <SocialLink href="#">
+                  <SocialImg src="icon-pinterest.svg" />
+                </SocialLink>
+                <SocialLink href="#">
+                  <SocialImg src="icon-instagram.svg" />
+                </SocialLink>
+              </SocialContainer>
+            </LogoCont>
+          </FirstContainer>
+          <SecondContainer>
+            <NavContainer>
+              <NavLink href="#">Home</NavLink>
+              <NavLink href="#">Pricing</NavLink>
+              <NavLink href="#">Products</NavLink>
+              <NavLink href="#">About Us</NavLink>
+            </NavContainer>
 
-          <NavContainer>
-            <NavLink href="#">Careers</NavLink>
-            <NavLink href="#">Community</NavLink>
-            <NavLink href="#">Privacy Policy</NavLink>
-          </NavContainer>
-        </SecondContainer>
-        <ThirdContainer>
-          <PartTwo>
-            <InboxContainer>
-              <TextField
-                type="text"
-                placeholder="Updates in your inbox"
-              ></TextField>
-              <Submit>Go</Submit>
-            </InboxContainer>
-          </PartTwo>
-        </ThirdContainer>
-        <FourthContainer>
-          <Copyright>Copyright 2020. All Rights Reserved</Copyright>
-          <Author>
-            Challenge by{" "}
-            <a
-              href="https://www.frontendmentor.io?ref=challenge"
-              target="_blank"
-              className="author"
-            >
-              Frontend Mentor
-            </a>
-            <br />
-            Coded by{" "}
-            <a
-              className="author"
-              href="https://www.frontendmentor.io/profile/Joshardals"
-            >
-              Joshua Bamidele
-            </a>
-          </Author>
-        </FourthContainer>
-      </FooterContainer>
+            <NavContainer>
+              <NavLink href="#">Careers</NavLink>
+              <NavLink href="#">Community</NavLink>
+              <NavLink href="#">Privacy Policy</NavLink>
+            </NavContainer>
+          </SecondContainer>
+          <ThirdContainer>
+            <PartTwo>
+              <InboxContainer>
+                <TextField
+                  type="text"
+                  placeholder="Updates in your inbox"
+                ></TextField>
+                <Submit>Go</Submit>
+              </InboxContainer>
+            </PartTwo>
+          </ThirdContainer>
+          <FourthContainer className="">
+            <Copyright>Copyright 2020. All Rights Reserved</Copyright>
+            <Author>
+              Challenge by{" "}
+              <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                className="author"
+              >
+                Frontend Mentor
+              </a>
+              <br />
+              Coded by{" "}
+              <a
+                className="author"
+                href="https://www.frontendmentor.io/profile/Joshardals"
+              >
+                Joshua Bamidele
+              </a>
+            </Author>
+          </FourthContainer>
+        </FooterContainer>
+      </Zoom>
     </Wrapper>
   );
 };
 const Wrapper = tw.div`
 `;
 const FooterContainer = tw.div`
-    h-auto bg-very-dark-blue w-full lg:px-[10rem]
+    h-auto bg-very-dark-blue w-full lg:px-10 xl:px-[10rem]
     px-6 flex py-14 lg:space-x-[5rem] lg:flex-row flex-col
     justify-center items-center lg:items-start lg:relative 
     right-0 left-0
@@ -93,8 +97,16 @@ const FirstContainer = tw.div`
 const LogoCont = tw.div`
   flex flex-col lg:space-y-[8rem]
 `;
-const LogoImg = tw.img`
-  order-1 lg:order-none mb-[3rem] lg:mb-0
+const LogoImg = styled.img`
+  order: 1;
+  margin-bottom: 3rem;
+  filter: invert(100%) sepia(94%) saturate(3678%) hue-rotate(186deg)
+    brightness(130%) contrast(103%);
+
+  @media (min-width: 1024px) {
+    margin-bottom: 0;
+    order: 0;
+  }
 `;
 const SocialContainer = tw.div`
   flex mb-[3rem] lg:mb-0
@@ -102,7 +114,8 @@ const SocialContainer = tw.div`
 const SocialLink = tw.a`
   px-2
 `;
-const SocialImg = tw.img``;
+const SocialImg = tw.img`
+`;
 const NavContainer = tw.div`
   flex flex-col 
 `;
@@ -120,7 +133,8 @@ const TextField = tw.input`
 `;
 const Submit = tw.div`
   bg-bright-red rounded-full text-center px-6 py-3 text-white w-[5rem] lg:w-auto
-`;
+  hover:bg-white hover:text-bright-red transition-all
+  `;
 const ThirdContainer = tw.div`
   w-full lg:w-auto mb-[3rem] lg:mb-0
 `;
@@ -129,7 +143,7 @@ const PartTwo = tw.div`
 `;
 const FourthContainer = tw.div`
   text-center lg:text-right text-sm order-4 lg:order-none text-white
-  space-y-2 lg:absolute lg:bottom-14 lg:right-[10rem]
+  space-y-2 lg:absolute lg:bottom-14 lg:right-10 xl:right-[10rem] 
 `;
 const Author = tw.div`
 `;

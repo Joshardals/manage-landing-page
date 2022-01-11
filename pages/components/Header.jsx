@@ -2,24 +2,28 @@ import React from "react";
 import tw from "tailwind-styled-components";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import Fade from "react-reveal/Fade";
 
 const Header = () => {
   return (
     <Wrapper>
       <Navbar />
-      <HeaderContainer>
-        <HeaderText>
-          <h1>Bring everyone together to build better products.</h1>
-          <p>
-            Manage makes it simple for software teams to plan day-to-day tasks
-            while keeping the larger team goals in view.
-          </p>
-          <ButtonContainer>
-            <GetStarted>Get Started</GetStarted>
-          </ButtonContainer>
-        </HeaderText>
-        <HeroImg src="/illustration-intro.svg" />
-      </HeaderContainer>
+      <Fade>
+        <HeaderContainer>
+          <HeaderText>
+            <h1>Bring everyone together to build better products.</h1>
+            <p>
+              Manage makes it simple for software teams to plan day-to-day tasks
+              while keeping the larger team goals in view.
+            </p>
+            <ButtonContainer>
+              <GetStarted>Get Started</GetStarted>
+            </ButtonContainer>
+          </HeaderText>
+
+          <HeroImg src="/illustration-intro.svg" />
+        </HeaderContainer>
+      </Fade>
     </Wrapper>
   );
 };
@@ -56,7 +60,7 @@ const Wrapper = styled.div`
 `;
 const HeaderContainer = tw.div`
   flex justify-between lg:flex-row  lg:py-10
-  items-center lg:px-[10rem] lg:space-x-[5rem]
+  items-center lg:px-10 xl:px-[10rem] lg:space-x-[5rem]
   lg:text-left
 
   flex-col text-center
@@ -81,6 +85,12 @@ const GetStarted = styled.div`
   padding: 0.75rem 1.75rem 0.75rem 1.75rem;
   box-shadow: 1px 6px 4px 0px rgb(242, 95, 58, 0.4);
   font-weight: 600;
+  transition: all 0.3s ease-in 2ms;
+
+  &:hover {
+    background: #fff;
+    color: hsl(12, 88%, 59%);
+  }
 
   @media (max-width: 768px) {
     margin-top: 1.5rem;
