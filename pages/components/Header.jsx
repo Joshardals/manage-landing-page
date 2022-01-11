@@ -7,20 +7,20 @@ const Header = () => {
   return (
     <Wrapper>
       <Navbar />
-        <HeaderContainer>
-          <HeaderText>
-            <h1>Bring everyone together to build better products.</h1>
-            <p>
-              Manage makes it simple for software teams to plan day-to-day tasks
-              while keeping the larger team goals in view.
-            </p>
-            <ButtonContainer>
-              <GetStarted>Get Started</GetStarted>
-            </ButtonContainer>
-          </HeaderText>
+      <HeaderContainer>
+        <HeaderText>
+          <h1>Bring everyone together to build better products.</h1>
+          <p>
+            Manage makes it simple for software teams to plan day-to-day tasks
+            while keeping the larger team goals in view.
+          </p>
+          <ButtonContainer>
+            <GetStarted>Get Started</GetStarted>
+          </ButtonContainer>
+        </HeaderText>
 
-          <HeroImg src="/illustration-intro.svg" />
-        </HeaderContainer
+        <HeroImg src="/illustration-intro.svg" />
+      </HeaderContainer>
     </Wrapper>
   );
 };
