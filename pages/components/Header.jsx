@@ -2,13 +2,11 @@ import React from "react";
 import tw from "tailwind-styled-components";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import Fade from "react-reveal/Fade";
 
 const Header = () => {
   return (
     <Wrapper>
       <Navbar />
-      <Fade>
         <HeaderContainer>
           <HeaderText>
             <h1>Bring everyone together to build better products.</h1>
@@ -22,8 +20,7 @@ const Header = () => {
           </HeaderText>
 
           <HeroImg src="/illustration-intro.svg" />
-        </HeaderContainer>
-      </Fade>
+        </HeaderContainer
     </Wrapper>
   );
 };
